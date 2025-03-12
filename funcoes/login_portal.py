@@ -17,7 +17,8 @@ def login_portal():
     btn_entrar = wait_for_element(driver, '/html/body/div[2]/div/main/div/form/fieldset/input[4]')
     btn_entrar.click()
     sleep(15)
-    
+
+# clica no menu para entrar na opção "Time Parceiro"   
     menu = wait_for_element(driver, '/html/body/app-root/div/div/div/app-header/nav/label')
     menu.click()
     sleep(5)
@@ -34,28 +35,28 @@ def login_portal():
     time_parceiro.click()
     sleep(10)
 
-    """Verifica se há um CAPTCHA na página e resolve se encontrar."""
+# Verifica se tem algum captcha dentro dos iframes
     iframes = driver.find_elements(By.TAG_NAME, "iframe")
  
     for iframe in iframes:
         driver.switch_to.frame(iframe)
         try:
-            driver.find_element(By.ID, "recaptcha-audio-button")  # Se encontrou, resolve o CAPTCHA
+            # verifica se tem o botão de audio do captcha dentro do iframe
+            driver.find_element(By.ID, "recaptcha-audio-button")  
             driver.switch_to.default_content()
-            reCaptcha_solver()
-            break  # CAPTCHA foi resolvido
+            reCaptcha_solver() # se tiver, entrar na função para resolver
+            break # sai do loop
         except:
             driver.switch_to.default_content()
             print("Nenhum CAPTCHA encontrado.")
             continue
-
     sleep(10)
 
+# clica no botão para exportar o excel e depois clica no botão de download
     exporta_excel = wait_for_element(driver, '/html/body/app-root/div/div/div/div/div/div/app-lista-consultor/div[1]/div/div/div/div[1]/div[2]/div[3]/a')
     exporta_excel.click()
     sleep(60)
  
-
     btn_download = wait_for_element(driver, '/html/body/div[1]/div/div[3]/button[1]')
     btn_download.click()
     sleep(10)

@@ -4,7 +4,7 @@ __pycache__
 crack_recaptcha/__pycache__
 funcpes/__pycache__
 
-#Configuração do arquivo auth.ini
-#[INFOB2B]
-#usuario = usuario
-#senha = senha
+# Configuração do arquivo auth.ini
+# [INFOB2B]
+# usuario = usuario
+# senha = senha
