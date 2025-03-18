@@ -23,7 +23,8 @@ def descompactar_arquivo():
     # mover o csv para a nova pasta
     arquivo_destino = 'C:/Users/A0170053/OneDrive - Telefonica/Projetos/RPA/RPA_RelatorioParceiroInfoB2B'
     shutil.move(novo_nome, arquivo_destino)
-
+    # remove arquivo .zip baixado
+    os.remove(arquivo)
 
 
 
