@@ -57,8 +57,10 @@ def login_portal():
     exporta_excel.click()
     sleep(60)
  
-    btn_download = wait_for_element(driver, '/html/body/div[1]/div/div[3]/button[1]')
-    btn_download.click()
+    btn_download = driver.find_element(By.CLASS_NAME, "swal2-confirm")
+    link_download = btn_download.find_element(By.TAG_NAME, "a")
+    #btn_download = wait_for_element(driver, '/html/body/div[2]/div/div[3]/button[1]/a') 
+    link_download.click()
     sleep(10)
 
   

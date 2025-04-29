@@ -23,9 +23,24 @@ def descompactar_arquivo():
     # mover o csv para a nova pasta
     arquivo_destino = 'C:/Users/A0170053/OneDrive - Telefonica/Projetos/RPA/RPA_RelatorioParceiroInfoB2B'
     shutil.move(novo_nome, arquivo_destino)
+    print('arquivo movido')
     # remove arquivo .zip baixado
     os.remove(arquivo)
+    print('pasta zip deletada')
 
+    # move arquivo para a pasta de histórico
+    arquivo_pasta_destino = glob.glob('C:/Users/A0170053/OneDrive - Telefonica/Projetos/RPA/RPA_RelatorioParceiroInfoB2B/RelatorioInfoB2B_TimeParceiro_*.csv')
+    caminho_arquivo = arquivo_pasta_destino[0]
+    shutil.copy(caminho_arquivo, r'C:\Users\A0170053\OneDrive - Telefonica\Projetos')
+    print('arquivo copiado')
+
+    # renomeia o excel com um nome padrão para poder rodar no integration
+    arquivo_renomeado = glob.glob('C:/Users/A0170053/OneDrive - Telefonica/Projetos/RPA/RPA_RelatorioParceiroInfoB2B/RelatorioInfoB2B_TimeParceiro_*.csv')
+    arquivo_renomeado2 = arquivo_renomeado[0]
+    renomear = os.path.join('C:/Users/A0170053/OneDrive - Telefonica/Projetos/RPA/RPA_RelatorioParceiroInfoB2B', 'RelatorioInfoB2B_TimeParceiro.csv')
+    print(renomear)
+    os.rename(arquivo_renomeado2, renomear)
+    print('arquivo renomeado para o nome padrão')
 
 
 
