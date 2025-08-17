@@ -1,3 +1,6 @@
+Este README esá em inglês e português
+This README is in english and portuguese
+
 # 🤖 RPA Extrair Relatorio Site
 
 
@@ -42,6 +45,54 @@ Veja a lista completa de dependências no arquivo [`requirements.txt`](./require
 - O ChromeDriver deve ser compatível com a versão do seu navegador Chrome.
 
 ## ▶️ Exemplo de execução
+
+```bash
+python main.py
+```
+<br>
+
+# 🤖 RPA Extract Site Report
+
+This RPA project automates the extraction of reports from a website using Python and Selenium automation, as well as tools for audio handling and speech recognition (useful for breaking captchas and automating challenges).
+
+## ✨ How it works
+
+- The project automates website access, navigation, downloading, and report handling.
+- It includes modules to deal with captchas (including audio recognition via SpeechRecognition).
+- Uses Selenium for browser automation; ChromeDriver is required.
+- The main flow is in `main.py`, which orchestrates the automation functions.
+
+## 🛠️ Libraries Used
+
+The project uses several libraries, including:
+
+- 🕹️ **Selenium** (`selenium`): browser automation.
+- 🗂️ **Pandas** (`pandas`): data and report handling.
+- 🧠 **SpeechRecognition**: audio recognition to solve captchas.
+- 🔊 **soundfile**, **audiofile**, **audmath**, **audeer**: audio file and signal manipulation.
+- ⏳ **tqdm**: progress bar.
+- 💻 **colorama**: terminal text colorization.
+- 🌎 **urllib3**, **websocket-client**: webservice communication.
+- 📦 And other utilities listed in `requirements.txt`.
+
+See the full list of dependencies in the [`requirements.txt`](./requirements.txt) file.
+
+## 📁 File Structure
+
+- `main.py`: project entry point.
+- `variable_global.py`: global variables and configurations.
+- `funcoes/`: auxiliary functions for automation.
+- `captcha/`, `crack_reCaptcha/`: modules for captcha handling and breaking.
+- `chromedriver/`: ChromeDriver needed for Selenium and browser handling.
+- `requirements.txt`: project dependency list.
+
+## ⚠️ Notes
+
+- File paths are set for Windows; adjust for your environment as needed.
+- Make sure to install all dependencies with `pip install -r requirements.txt`.
+- ChromeDriver must be compatible with your Chrome browser version.
+
+## ▶️ Example of execution
 
 ```bash
 python main.py
