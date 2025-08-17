@@ -12,7 +12,7 @@ def solve_text_captcha(driver, url):
     sleep(5)
     # Capturar Captcha ID
     id = driver.find_element(By.ID, "idCaptcha").get_attribute("value")
-    url = f"window.open('https://autenticaint.vivo.com.br/LoginCorp/captcha?id={id}', '_blank');"
+    url = f"window.open('https://site_com_o_captcha/captcha?id={id}', '_blank');"
     driver.execute_script(url)
     janelas = driver.window_handles
     driver.switch_to.window(janelas[1])
@@ -32,7 +32,7 @@ def solve_text_captcha(driver, url):
             [_][0][0:100] + [_][0][1000:1100] + [_][0][2000:2100]
         )
     # Banco de Captchas
-    conn = sqlite3.connect("C:/Users/A0170053/OneDrive - Telefonica/Projetos/RPA/RPA_RelatorioParceiroInfoB2B/captcha/database2.db")
+    conn = sqlite3.connect("C:/Users/Projetos/RPA/RPA_RelatorioParceiroInfoB2B/captcha/database2.db")
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM Captcha")
     resultados = cursor.fetchall()

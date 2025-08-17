@@ -20,4 +20,4 @@ senha = config["INFOB2B"]["senha"]
 
 # Inicializando o driver com as opções configuradas
 driver = webdriver.Chrome(service=web, options=chrome_options)
-url_portal = "https://www.portalinfob2b.com.br/Homeprincipal"
+url_portal = "https://www.site-que-vai-acessar"

@@ -1,5 +1,5 @@
 import os
 
-arquivo = 'D:/EspacoCompartilhado/ArquivoHierarquiaConsultor/Diario/RelatorioInfoB2B_TimeParceiro.csv'
+arquivo = 'D:/Diario/arquivo.csv'
 os.remove(arquivo)
 print('arquivo apagado da pasta diario')
